@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/chooseaburger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="CHOOSE A BURGER!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/cheeseburger"
+        android:layout_width="114dp"
+        android:layout_height="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/cheeseburger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseaburger"
+        app:layout_constraintEnd_toStartOf="@id/cheesyveggie"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"/>
+
+    <TextView
+        android:id="@+id/txtcheseburg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Cheese Burger"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/cheeseburger"
+        app:layout_constraintStart_toStartOf="@id/cheeseburger"
+        app:layout_constraintTop_toBottomOf="@id/cheeseburger" />
+
+    <ImageButton
+        android:id="@+id/cheesyveggie"
+        android:layout_width="114dp"
+        android:layout_height="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/cheesyveggie"
+        app:layout_constraintStart_toEndOf="@id/cheeseburger"
+        app:layout_constraintTop_toBottomOf="@id/chooseaburger"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"/>
+
+    <TextView
+        android:id="@+id/txtcheseveg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Cheesy Veggie"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/cheesyveggie"
+        app:layout_constraintStart_toStartOf="@id/cheesyveggie"
+        app:layout_constraintTop_toBottomOf="@id/cheesyveggie" />
+
+    <ImageButton
+        android:id="@+id/chickenoverload"
+        android:layout_width="114dp"
+        android:layout_height="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/chickenoverload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtcheseburg"
+        app:layout_constraintEnd_toStartOf="@id/cheesyveggie"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"/>
+
+    <TextView
+        android:id="@+id/txtchickenoverload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Chicken Overload"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/chickenoverload"
+        app:layout_constraintStart_toStartOf="@id/chickenoverload"
+        app:layout_constraintTop_toBottomOf="@id/chickenoverload" />
+
+    <ImageButton
+        android:id="@+id/doublepatty"
+        android:layout_width="114dp"
+        android:layout_height="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/doublepatty"
+        app:layout_constraintStart_toEndOf="@id/cheeseburger"
+        app:layout_constraintTop_toBottomOf="@id/txtcheseburg"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"/>
+
+    <TextView
+        android:id="@+id/txtdoublepatty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Double Patty"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/doublepatty"
+        app:layout_constraintStart_toStartOf="@id/doublepatty"
+        app:layout_constraintTop_toBottomOf="@id/doublepatty" />
+
+    <ImageButton
+        android:id="@+id/spicydoublepattyoverload"
+        android:layout_width="114dp"
+        android:layout_height="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/spicydoublepattyoverload"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtchickenoverload"
+        app:layout_constraintEnd_toStartOf="@id/cheesyveggie"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"/>
+
+    <TextView
+        android:id="@+id/txtspicydoublepattyoverload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text=" Spicy Double\nPatty Overload"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/spicydoublepattyoverload"
+        app:layout_constraintStart_toStartOf="@id/spicydoublepattyoverload"
+        app:layout_constraintTop_toBottomOf="@id/spicydoublepattyoverload" />
+
+    <ImageButton
+        android:id="@+id/beefandchickenoverload"
+        android:layout_width="114dp"
+        android:layout_height="118dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="50dp"
+        android:maxHeight="50dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/beefandchickenoverload"
+        app:layout_constraintStart_toEndOf="@id/cheeseburger"
+        app:layout_constraintTop_toBottomOf="@id/txtchickenoverload"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:padding="15dp"/>
+
+    <TextView
+        android:id="@+id/txtbeefandchickenoverload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text=" Beef and Chicken\n       Overload"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/beefandchickenoverload"
+        app:layout_constraintStart_toStartOf="@id/beefandchickenoverload"
+        app:layout_constraintTop_toBottomOf="@id/beefandchickenoverload" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
