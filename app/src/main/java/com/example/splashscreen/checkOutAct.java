@@ -23,7 +23,7 @@ import org.json.JSONObject;
 
 public class checkOutAct extends Activity {
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "https://b47a-49-145-173-94.ngrok.io/burgerdatabase/insert.php";
+    private static String urlHost = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/insert.php";
     private static String TAG_MESSAGE = "message" , TAG_SUCCESS = "success";
     private static String online_dataset = "";
     Button order;
@@ -69,8 +69,16 @@ public class checkOutAct extends Activity {
             @Override
             public void onClick(View view) {
                 fullname = name.getText().toString();
-                month = String.valueOf(calendar.get(Calendar.MONTH) + 1);
-                day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH) + 1);
+                if ((calendar.get(Calendar.MONTH) + 1) < 10) {
+                    month = "0" + String.valueOf(calendar.get(Calendar.MONTH) + 1);
+                } else {
+                    month = String.valueOf(calendar.get(Calendar.MONTH) + 1);
+                }
+                if ((calendar.get(Calendar.DAY_OF_MONTH)) < 10) {
+                    day = "0" + String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+                } else {
+                    day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+                }
                 year = String.valueOf(calendar.get(Calendar.YEAR));
                 quantity = qty.getText().toString();
                 if (quantity.equals("")) {

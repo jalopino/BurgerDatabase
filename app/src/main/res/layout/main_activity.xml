@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/holo_green_light">
+    android:background="@drawable/burgerbg">
 
     <Button
         android:id="@+id/order"
@@ -14,7 +14,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="250dp"/>
+        android:layout_marginTop="250dp"
+        android:backgroundTint="@color/white"/>
     <Button
         android:id="@+id/edtorder"
         android:layout_width="wrap_content"
@@ -23,7 +24,8 @@
         app:layout_constraintTop_toBottomOf="@id/order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="25dp"/>
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/white"/>
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="fill_parent"

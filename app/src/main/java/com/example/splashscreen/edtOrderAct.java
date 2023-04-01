@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,13 +21,14 @@ import androidx.annotation.Nullable;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class edtOrderAct extends Activity {
+public class edtOrderAct extends Activity implements AdapterView.OnItemSelectedListener {
+    private Spinner burger;
     private static Button btnQuery;
-    private static EditText fullname, burger, qty;
-    private static TextView tv_civ;
+    private static EditText fullname, qty;
+    private static TextView tv_civ, defburger;
     private static String cItemcode = "";
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "https://5e00-49-145-173-94.ngrok.io/burgerdatabase/UpdateQty.php";
+    private static String urlHost = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/UpdateQty.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     String[] StringStatus = new String[] {"Single", "Married", "Widow", "Divorced"};
@@ -43,28 +47,48 @@ public class edtOrderAct extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edtorder_activity);
         fullname = (EditText) findViewById(R.id.fullname);
-        burger = (EditText) findViewById(R.id.burger);
+        burger = (Spinner) findViewById(R.id.burger);
         qty = (EditText) findViewById(R.id.qty);
         btnQuery = (Button) findViewById(R.id.btnQuery);
+        defburger = (TextView) findViewById(R.id.defburger);
         Intent i = getIntent();
         flnme = i.getStringExtra(FULLNAME);
         brgr = i.getStringExtra(BURGER);
         quantity = i.getStringExtra(QTY);
         aydi = i.getStringExtra(ID);
         fullname.setText(flnme);
-        burger.setText(brgr);
+        defburger.setText(brgr);
         qty.setText(quantity);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,
+                new String[]
+                        {"Select a burger","Cheese Burger","Veggie",
+                                "Cheesy Veggie","Chicken Overload",
+                                "Double Patty", "Spicy Double Patty Overload"});
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        burger.setAdapter(adapter);
+        burger.setSelection(0);
+        burger.setOnItemSelectedListener(this);
 
         btnQuery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (Burger.equals("Select a burger")) {
+                    Burger = brgr;
+                }
                 FullName = fullname.getText().toString();
-                Burger = burger.getText().toString();
                 Qty = qty.getText().toString();
                 new uploadDataToURL().execute();
             }
         });
+    }
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String selectedText = parent.getItemAtPosition(position).toString();
+        Burger = selectedText;
+        Toast.makeText(this, "Selected:" + selectedText, Toast.LENGTH_SHORT).show();
+    }
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
     private class uploadDataToURL extends AsyncTask<String, String, String> {
         String cPOST = "", cPostSQL = "", cMessage = "Querying data...";

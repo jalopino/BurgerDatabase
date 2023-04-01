@@ -32,11 +32,11 @@ public class manageOrderAct extends Activity {
     TextView textView, txtDefault, txtDefault_burger, txtDefault_qty, txtDefault_ID;
     private static EditText fullname;
     private static JSONParser jsonParser = new JSONParser();
-    private static String urlHostFullname = "https://5e00-49-145-173-94.ngrok.io/burgerdatabase/SelectItemDetails.php";
-    private static String urlHostDelete = "https://5e00-49-145-173-94.ngrok.io/burgerdatabase/delete.php";
-    private static String urlHostBurger = "https://5e00-49-145-173-94.ngrok.io/burgerdatabase/selectBurger.php";
-    private static String urlHostQty = "https://5e00-49-145-173-94.ngrok.io/burgerdatabase/selectQty.php";
-    private static String urlHostID = "https://5e00-49-145-173-94.ngrok.io/burgerdatabase/selectid.php";
+    private static String urlHostFullname = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/SelectItemDetails.php";
+    private static String urlHostDelete = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/delete.php";
+    private static String urlHostBurger = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/selectBurger.php";
+    private static String urlHostQty = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/selectQty.php";
+    private static String urlHostID = "https://78c7-49-145-173-94.ngrok.io/burgerdatabase/selectid.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String cItemcode = "";
